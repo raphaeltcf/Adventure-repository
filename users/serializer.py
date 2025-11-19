@@ -6,9 +6,3 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = '__all__'
         read_only_fields = ['created_at', 'updated_at']
-
-class AddressSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Address
-        fields = '__all__'
-        read_only_fields = ['created_at', 'updated_at']
