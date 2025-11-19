@@ -23,22 +23,4 @@ class UserService:
         user.delete()
         return user
     
-    def list_addresses(self) -> List[Address]:
-        return Address.objects.all().order_by('-created_at')
-    
-    def get_address(self, address_id: str) -> Address:
-        return Address.objects.get(id=address_id)
-    
-    def create_address(self, address_data: Dict[str, Any]) -> Address:
-        return Address.objects.create(**address_data)
-    
-    def update_address(self, address_id: str, address_data: Dict[str, Any]) -> Address:
-        address = self.get_address(address_id)
-        for key, value in address_data.items():
-            setattr(address, key, value)
-        address.save()
-        return address
-    
-    def delete_address(self, address_id: str) -> None:
-        address = self.get_address(address_id)
-        address.delete()
+   
